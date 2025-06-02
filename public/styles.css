@@ -1,0 +1,36 @@
+body {
+  margin: 40px;
+}
+
+#draggable {
+  width: 100px;
+  height: 100px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 8px;
+  cursor: move;
+  user-select: none;
+  position: absolute;
+}
+
+.dropzone {
+  width: 200px;
+  height: 200px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  margin-top: 150px;
+  margin-left: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  transition: all 0.2s ease;
+}
+
+.dropzone.active {
+  border-color: #4caf50;
+  color: #4caf50;
+  background-color: #f0fff0;
+}
