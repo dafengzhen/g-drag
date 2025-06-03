@@ -1,6 +1,6 @@
 {
   "name": "g-drag",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "g-drag is a simple JavaScript drag-and-drop library.",
   "main": "./dist/g-drag.cjs",
   "module": "./dist/g-drag.js",
