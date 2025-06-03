@@ -12,18 +12,20 @@ export function findMatchingDropTarget(el: Element, selector: ((el: Element) => 
 }
 
 export function getEventClientPos(e: MouseEvent | PointerEvent | TouchEvent): [number, number] {
+  const zoom = window.visualViewport?.scale || 1;
+
   if ('touches' in e && e.touches.length > 0) {
     const touch = e.touches[0];
-    return [touch.clientX, touch.clientY];
+    return [touch.clientX / zoom, touch.clientY / zoom];
   }
 
   if ('changedTouches' in e && e.changedTouches.length > 0) {
     const touch = e.changedTouches[0];
-    return [touch.clientX, touch.clientY];
+    return [touch.clientX / zoom, touch.clientY / zoom];
   }
 
   if ('clientX' in e && 'clientY' in e) {
-    return [e.clientX, e.clientY];
+    return [e.clientX / zoom, e.clientY / zoom];
   }
 
   return [0, 0];
